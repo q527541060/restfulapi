@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -28,15 +29,15 @@ import java.util.List;
 @RequestMapping("/Api")
 public class SJobController {
 
-    @Autowired
+    @Resource
     SJobService sJobService;
 
-   /* @GetMapping("/job")
+    @GetMapping("/job")
     @ResponseStatus(HttpStatus.OK)
     public ApiResponse getJob(){
-        List<SLine> lst = sLineService.selectList(null);
+        List<SJob> lst = sJobService.selectList(null);
         return new ApiResponse(true,"",lst);
-    }*/
+    }
     /***
      * insertjob
      * @param sJob
@@ -57,6 +58,7 @@ public class SJobController {
             if(sJobService.selectCount(Condition.create().eq("jobName",sJob.getJobName()))>0){
 
             }else{
+                sJob.setCreate_time("21000101");
                 bIsSuccess = sJobService.insertOrUpdate(sJob);
             }
         }catch (Exception ex){

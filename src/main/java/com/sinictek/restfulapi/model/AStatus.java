@@ -1,10 +1,9 @@
 package com.sinictek.restfulapi.model;
 
+import com.baomidou.mybatisplus.enums.IdType;
+import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.baomidou.mybatisplus.enums.IdType;
-
-import java.util.Date;
 import java.io.Serializable;
 
 /**
@@ -13,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author sinictek-pd
- * @since 2020-09-21
+ * @since 2020-12-09
  */
 @TableName("a_status")
 public class AStatus implements Serializable {
@@ -106,10 +105,31 @@ public class AStatus implements Serializable {
      */
     private Date updateTime;
     /**
+     * Mode
+     */
+    private String aoiMode;
+    /**
      * remark
      */
     private String remark;
 
+    private  String create_time;
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getAoiMode() {
+        return aoiMode;
+    }
+
+    public void setAoiMode(String aoiMode) {
+        this.aoiMode = aoiMode;
+    }
 
     public Long getId() {
         return id;

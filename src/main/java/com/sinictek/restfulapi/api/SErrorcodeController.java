@@ -4,6 +4,7 @@ package com.sinictek.restfulapi.api;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Controller;
  * @author sinictek-pd
  * @since 2020-09-21
  */
-@Controller
+@RestController
 @RequestMapping("/sErrorcode")
 public class SErrorcodeController {
 

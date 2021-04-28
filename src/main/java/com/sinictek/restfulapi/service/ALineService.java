@@ -1,7 +1,7 @@
 package com.sinictek.restfulapi.service;
 
-import com.baomidou.mybatisplus.service.IService;
 import com.sinictek.restfulapi.model.ALine;
+import com.baomidou.mybatisplus.service.IService;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.sinictek.restfulapi.model.ALine;
  * </p>
  *
  * @author sinictek-pd
- * @since 2020-09-21
+ * @since 2020-12-09
  */
 public interface ALineService extends IService<ALine> {
 

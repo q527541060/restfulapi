@@ -26,7 +26,15 @@ public class SLine implements Serializable {
     private Date createDate;
     private Date updateDate;
     private String remark;
+    private  String create_time;
 
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
 
     public Long getId() {
         return id;

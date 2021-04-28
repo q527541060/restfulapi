@@ -8,14 +8,12 @@ import com.sinictek.restfulapi.model.SStatus;
 import com.sinictek.restfulapi.model.apiResponse.ApiResponse;
 import com.sinictek.restfulapi.service.SLineService;
 import com.sinictek.restfulapi.service.SStatusService;
+import com.sinictek.restfulapi.util.StringTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.annotation.Resource;
 
@@ -27,11 +25,11 @@ import javax.annotation.Resource;
  * @author sinictek-pd
  * @since 2020-09-21
  */
-@Controller
+@RestController
 @RequestMapping("/Api")
 public class SStatusController {
 
-    @Autowired
+    @Resource
     SStatusService sStatusService;
     @Resource
     SLineService sLineService;
@@ -52,14 +50,19 @@ public class SStatusController {
                     sline.setLineNo(sStatus.getLineNo());
                     sline.setCreateDate(sStatus.getUpdateTime());
                     sline.setUpdateDate(sStatus.getUpdateTime());
+                    sline.setCreate_time("21000101");
                     sLineService.insertOrUpdate(sline);
+                    sline = null;
                 }
-
+                sStatus.setCreate_time(StringTimeUtils.getDateToYearMonthDayString(sStatus.getUpdateTime()));
                 bIsInsertsStatus =  sStatusService.insertOrUpdate(sStatus);
             }catch (Exception ex){
+                sStatus = null;
                 return  new ApiResponse(false,ex.getMessage(),"FAIL");
             }
         }
+        sStatus = null;
+        System.gc();
         return  new ApiResponse(bIsInsertsStatus,"","OK");
 
     }

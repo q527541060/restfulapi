@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author sinictek-pd
- * @since 2020-09-21
+ * @since 2020-12-09
  */
 public interface AStatusMapper extends BaseMapper<AStatus> {
 

@@ -46,7 +46,15 @@ public class SStatus implements Serializable {
     private String errContent;
     private Date updateTime;
     private String remark;
+    private  String create_time;
 
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
 
     public Long getId() {
         return id;

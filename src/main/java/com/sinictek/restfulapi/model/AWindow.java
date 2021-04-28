@@ -1,0 +1,401 @@
+package com.sinictek.restfulapi.model;
+
+import com.baomidou.mybatisplus.enums.IdType;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+import java.io.Serializable;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author sinictek-pd
+ * @since 2020-12-09
+ */
+@TableName("a_window")
+public class AWindow implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
+    private Long comid;
+    private String pcbIdLine;
+    private Integer aoiMode;
+    private Integer arrayIndex;
+    private Integer fovIndex;
+    private String partdesignate;
+    private Integer windowIndex;
+    private Integer result;
+    private String windowposition;
+    private String valueInfo;
+    private Double height;
+    private Double perheight;
+    private Double xshift;
+    private Double perxshift;
+    private Double yshift;
+    private Double peryshift;
+    private Double angle;
+    private Double perangle;
+    private Double volume;
+    private Double bigvolume;
+    private Double pervolume;
+    private Double planeness;
+    private Double uplanenesswindowid;
+    private Double lplanenesswindowid;
+    private Double linearity;
+    private Double ulinearitywindowid;
+    private Double llinearitywindowid;
+    private Double similarity;
+    private Double polarity;
+    private Double area;
+    private Double bigarea;
+    private Double perarea;
+    private String algorithmparam;
+    private String winImageBase64;
+    private String win3dImageBase64;
+    private String historyDefectRecord;
+    private  String create_time;
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public Double getPerarea() {
+        return perarea;
+    }
+
+    public void setPerarea(Double perarea) {
+        this.perarea = perarea;
+    }
+
+    public String getHistoryDefectRecord() {
+        return historyDefectRecord;
+    }
+
+    public void setHistoryDefectRecord(String historyDefectRecord) {
+        this.historyDefectRecord = historyDefectRecord;
+    }
+
+    public String getPcbIdLine() {
+        return pcbIdLine;
+    }
+
+    public void setPcbIdLine(String pcbIdLine) {
+        this.pcbIdLine = pcbIdLine;
+    }
+
+    public Integer getAoiMode() {
+        return aoiMode;
+    }
+
+    public void setAoiMode(Integer aoiMode) {
+        this.aoiMode = aoiMode;
+    }
+
+    public Integer getArrayIndex() {
+        return arrayIndex;
+    }
+
+    public void setArrayIndex(Integer arrayIndex) {
+        this.arrayIndex = arrayIndex;
+    }
+
+    public Integer getFovIndex() {
+        return fovIndex;
+    }
+
+    public void setFovIndex(Integer fovIndex) {
+        this.fovIndex = fovIndex;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getComid() {
+        return comid;
+    }
+
+    public void setComid(Long comid) {
+        this.comid = comid;
+    }
+
+    public String getPartdesignate() {
+        return partdesignate;
+    }
+
+    public void setPartdesignate(String partdesignate) {
+        this.partdesignate = partdesignate;
+    }
+
+    public Integer getWindowIndex() {
+        return windowIndex;
+    }
+
+    public void setWindowIndex(Integer windowIndex) {
+        this.windowIndex = windowIndex;
+    }
+
+    public Integer getResult() {
+        return result;
+    }
+
+    public void setResult(Integer result) {
+        this.result = result;
+    }
+
+    public String getWindowposition() {
+        return windowposition;
+    }
+
+    public void setWindowposition(String windowposition) {
+        this.windowposition = windowposition;
+    }
+
+    public String getValueInfo() {
+        return valueInfo;
+    }
+
+    public void setValueInfo(String valueInfo) {
+        this.valueInfo = valueInfo;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        this.height = height;
+    }
+
+    public Double getPerheight() {
+        return perheight;
+    }
+
+    public void setPerheight(Double perheight) {
+        this.perheight = perheight;
+    }
+
+    public Double getXshift() {
+        return xshift;
+    }
+
+    public void setXshift(Double xshift) {
+        this.xshift = xshift;
+    }
+
+    public Double getPerxshift() {
+        return perxshift;
+    }
+
+    public void setPerxshift(Double perxshift) {
+        this.perxshift = perxshift;
+    }
+
+    public Double getYshift() {
+        return yshift;
+    }
+
+    public void setYshift(Double yshift) {
+        this.yshift = yshift;
+    }
+
+    public Double getPeryshift() {
+        return peryshift;
+    }
+
+    public void setPeryshift(Double peryshift) {
+        this.peryshift = peryshift;
+    }
+
+    public Double getAngle() {
+        return angle;
+    }
+
+    public void setAngle(Double angle) {
+        this.angle = angle;
+    }
+
+    public Double getPerangle() {
+        return perangle;
+    }
+
+    public void setPerangle(Double perangle) {
+        this.perangle = perangle;
+    }
+
+    public Double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Double volume) {
+        this.volume = volume;
+    }
+
+    public Double getBigvolume() {
+        return bigvolume;
+    }
+
+    public void setBigvolume(Double bigvolume) {
+        this.bigvolume = bigvolume;
+    }
+
+    public Double getPervolume() {
+        return pervolume;
+    }
+
+    public void setPervolume(Double pervolume) {
+        this.pervolume = pervolume;
+    }
+
+    public Double getPlaneness() {
+        return planeness;
+    }
+
+    public void setPlaneness(Double planeness) {
+        this.planeness = planeness;
+    }
+
+    public Double getUplanenesswindowid() {
+        return uplanenesswindowid;
+    }
+
+    public void setUplanenesswindowid(Double uplanenesswindowid) {
+        this.uplanenesswindowid = uplanenesswindowid;
+    }
+
+    public Double getLplanenesswindowid() {
+        return lplanenesswindowid;
+    }
+
+    public void setLplanenesswindowid(Double lplanenesswindowid) {
+        this.lplanenesswindowid = lplanenesswindowid;
+    }
+
+    public Double getLinearity() {
+        return linearity;
+    }
+
+    public void setLinearity(Double linearity) {
+        this.linearity = linearity;
+    }
+
+    public Double getUlinearitywindowid() {
+        return ulinearitywindowid;
+    }
+
+    public void setUlinearitywindowid(Double ulinearitywindowid) {
+        this.ulinearitywindowid = ulinearitywindowid;
+    }
+
+    public Double getLlinearitywindowid() {
+        return llinearitywindowid;
+    }
+
+    public void setLlinearitywindowid(Double llinearitywindowid) {
+        this.llinearitywindowid = llinearitywindowid;
+    }
+
+    public Double getSimilarity() {
+        return similarity;
+    }
+
+    public void setSimilarity(Double similarity) {
+        this.similarity = similarity;
+    }
+
+    public Double getPolarity() {
+        return polarity;
+    }
+
+    public void setPolarity(Double polarity) {
+        this.polarity = polarity;
+    }
+
+    public Double getArea() {
+        return area;
+    }
+
+    public void setArea(Double area) {
+        this.area = area;
+    }
+
+    public Double getBigarea() {
+        return bigarea;
+    }
+
+    public void setBigarea(Double bigarea) {
+        this.bigarea = bigarea;
+    }
+
+    public String getAlgorithmparam() {
+        return algorithmparam;
+    }
+
+    public void setAlgorithmparam(String algorithmparam) {
+        this.algorithmparam = algorithmparam;
+    }
+
+    public String getWinImageBase64() {
+        return winImageBase64;
+    }
+
+    public void setWinImageBase64(String winImageBase64) {
+        this.winImageBase64 = winImageBase64;
+    }
+
+    public String getWin3dImageBase64() {
+        return win3dImageBase64;
+    }
+
+    public void setWin3dImageBase64(String win3dImageBase64) {
+        this.win3dImageBase64 = win3dImageBase64;
+    }
+
+    @Override
+    public String toString() {
+        return "AWindow{" +
+        ", id=" + id +
+        ", comid=" + comid +
+        ", partdesignate=" + partdesignate +
+        ", windowIndex=" + windowIndex +
+        ", result=" + result +
+        ", windowposition=" + windowposition +
+        ", valueInfo=" + valueInfo +
+        ", height=" + height +
+        ", perheight=" + perheight +
+        ", xshift=" + xshift +
+        ", perxshift=" + perxshift +
+        ", yshift=" + yshift +
+        ", peryshift=" + peryshift +
+        ", angle=" + angle +
+        ", perangle=" + perangle +
+        ", volume=" + volume +
+        ", bigvolume=" + bigvolume +
+        ", pervolume=" + pervolume +
+        ", planeness=" + planeness +
+        ", uplanenesswindowid=" + uplanenesswindowid +
+        ", lplanenesswindowid=" + lplanenesswindowid +
+        ", linearity=" + linearity +
+        ", ulinearitywindowid=" + ulinearitywindowid +
+        ", llinearitywindowid=" + llinearitywindowid +
+        ", similarity=" + similarity +
+        ", polarity=" + polarity +
+        ", area=" + area +
+        ", bigarea=" + bigarea +
+        ", algorithmparam=" + algorithmparam +
+        ", winImageBase64=" + winImageBase64 +
+        ", win3dImageBase64=" + win3dImageBase64 +
+        "}";
+    }
+}

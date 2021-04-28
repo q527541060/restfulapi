@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -29,7 +32,7 @@ public class SLineController {
      * @param sline
      * @return
      */
-    @PostMapping("/insertSpiLine")
+    @PostMapping(value="/insertSpiLine",produces = "application/json;charset=utf-8")
     @ResponseStatus(HttpStatus.CREATED)
     public ApiResponse insertSpiLineTable(@RequestBody SLine sline){
 
@@ -42,12 +45,40 @@ public class SLineController {
             if(sLineService.selectCount(Condition.create().eq("LineNo",sline.getLineNo()))>0){
 
             }else{
+                sline.setCreate_time("21000101");
                 bIsSuccess = sLineService.insertOrUpdate(sline);
             }
         }catch (Exception ex){
             return new ApiResponse(false,ex.getMessage(),"FAIL");
         }
         return new ApiResponse(bIsSuccess,"","OK");
+    }
+
+
+    @GetMapping(value="/getSpiLine",produces = "application/json;charset=utf-8")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse getSpiLineTable(){
+
+        return new ApiResponse(true,"",sLineService.selectList(null));
+    }
+
+    @GetMapping("/updateSpiLine")
+    //@ResponseStatus(HttpStatus.CREATED)
+    public ApiResponse updateSpiLineTable(){
+        List<SLine> lineList = sLineService.selectList(null) ;
+        for (int i = 0; i < lineList.size(); i++) {
+            SLine sLine = new SLine();
+            sLine.setLineContent("你走开 我不认识你。。。");
+            //sLine.setCreate_time("21000101");
+            sLine.setId(lineList.get(i).getId());
+            sLine.setCreateDate(new Date());
+            sLine.setUpdateDate(new Date());
+            sLine.setLineNo("SMT3");
+            sLine.setRemark("sadf");
+            sLineService.update(sLine,Condition.create().eq("lineNo",sLine.getLineNo()));
+        }
+
+        return new ApiResponse(true,"",lineList);
     }
 }
 

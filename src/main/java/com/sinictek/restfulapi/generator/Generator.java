@@ -25,15 +25,20 @@ public class Generator {
         String packageName = "com.sinictek.restfulapi";
         boolean srtviceNameStartWithI=false;  //iservice
 
-        generatorByTables(srtviceNameStartWithI,packageName,"sinictek-pd","db_spm",
-                "a_line",
-                "a_status",
-                "s_errorcode",
-                "s_job",
-                "s_line",
-                "s_pad",
-                "s_pcb",
-                "s_status"
+        generatorByTables(srtviceNameStartWithI,packageName,"sinictek-pd","db_spm01",
+        "s_realTimeSituation"
+ //                   "s_realTimeAutoRefresh",
+ //                       "s_realTimeConfig"
+//                "a_line"
+//                "a_status",
+//                "a_component",
+//                "a_defaultType",
+//                "a_fov",
+//                "a_job",
+//                "a_line",
+//                "a_pcb",
+//                "a_window"
+
                 );
        /* generatorByTables(srtviceNameStartWithI,packageName,"sinictek-pd","db_spm","s_defaultSetting");*/
         /* generatorByTables(srtviceNameStartWithI,packageName,"sinictek-pd","db_spm","s_component");
@@ -49,7 +54,7 @@ public class Generator {
            String author,String database,String... tableNames)
     {
         GlobalConfig config = new GlobalConfig();
-        String dburl = "jdbc:mysql://localhost:3306/db_spm?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8";
+        String dburl = "jdbc:mysql://localhost:3306/db_spm01?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setUrl(dburl)

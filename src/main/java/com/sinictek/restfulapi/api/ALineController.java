@@ -7,12 +7,11 @@ import com.sinictek.restfulapi.model.apiResponse.ApiResponse;
 import com.sinictek.restfulapi.service.ALineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ResponseStatus;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -22,11 +21,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author sinictek-pd
  * @since 2020-09-21
  */
-@Controller
+@RestController
 @RequestMapping("/Api")
 public class ALineController {
 
-    @Autowired
+    @Resource
     ALineService aLineService;
     @PostMapping("/insertAoiLine")
     @ResponseStatus(HttpStatus.CREATED)
@@ -41,6 +40,7 @@ public class ALineController {
             if(aLineService.selectCount(Condition.create().eq("LineNo",sline.getLineNo()))>0){
 
             }else{
+                sline.setCreate_time("21000101");
                 bIsSuccess = aLineService.insertOrUpdate(sline);
             }
         }catch (Exception ex){

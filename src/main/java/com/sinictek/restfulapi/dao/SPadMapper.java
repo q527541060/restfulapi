@@ -27,11 +27,11 @@ public interface SPadMapper extends BaseMapper<SPad> {
                 "`componentId` varchar(55) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
                 "`arrayId` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
                 "`padInspectResult` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
-                "`defectTypeCode` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
+                "`defectTypeCode` varchar(55) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
                 "`defectTypeName` varchar(55) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
                 "`padImagePath` varchar(55) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL," +
-                "`pad2dImage` blob NULL," +
-                "`pad3dImage` blob NULL," +
+                "`pad2dImage` longtext NULL," +
+                "`pad3dImage` longtext NULL," +
                 "`height` double NULL DEFAULT NULL," +
                 "`area` double NULL DEFAULT NULL," +
                 "`volume` double NULL DEFAULT NULL," +

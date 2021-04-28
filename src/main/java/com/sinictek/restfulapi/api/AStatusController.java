@@ -7,14 +7,12 @@ import com.sinictek.restfulapi.model.AStatus;
 import com.sinictek.restfulapi.model.apiResponse.ApiResponse;
 import com.sinictek.restfulapi.service.ALineService;
 import com.sinictek.restfulapi.service.AStatusService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sinictek.restfulapi.util.StringTimeUtils;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ResponseStatus;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -24,13 +22,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author sinictek-pd
  * @since 2020-09-21
  */
-@Controller
+@RestController
 @RequestMapping("/Api")
 public class AStatusController {
 
-    @Autowired
+    @Resource
     AStatusService statusService;
-    @Autowired
+    @Resource
     ALineService aLineService;
 
     @PostMapping("/insertAoiStatus")
@@ -52,13 +50,21 @@ public class AStatusController {
                     aline.setLineNo(aStatus.getLineNo());
                     aline.setCreateDate(aStatus.getUpdateTime());
                     aline.setUpdateDate(aStatus.getUpdateTime());
+                    aline.setAoiMode(aStatus.getAoiMode() ==null?1:Integer.parseInt(aStatus.getAoiMode()));
+                    aline.setCreate_time("21000101");
                     aLineService.insertOrUpdate(aline);
+
+                    aline = null;
                 }
+                aStatus.setCreate_time(StringTimeUtils.getDateToYearMonthDayString(aStatus.getUpdateTime()));
                 bIsInsertsStatus =  statusService.insertOrUpdate(aStatus);
             }catch (Exception ex){
+                aStatus = null;
                 return  new ApiResponse(false,ex.getMessage(),"FAIL");
             }
         }
+        aStatus = null;
+        System.gc();
         return  new ApiResponse(bIsInsertsStatus,"","OK");
 
     }

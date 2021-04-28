@@ -16,6 +16,8 @@ public class StringTimeUtils {
     private static String timeStr1;
     private static String timeStr2;
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("yyyyMMdd");
+    private static SimpleDateFormat simpleDateFormatDayMonth = new SimpleDateFormat("yyyyMM");
     /*public static String getTimeStrNow1(){
         Calendar instance = Calendar.getInstance();
         int year = instance.get(instance.YEAR);
@@ -31,12 +33,36 @@ public class StringTimeUtils {
     /***
      *  时间转换为字符串
      * @param date
-     * @return
+     * @return yyyy-MM-dd HH:mm:ss
      */
     public static String getTimeDateToString(Date date){
         //Date date = new Date();
 
         timeStr1 = simpleDateFormat.format(date);
+
+        return timeStr1;
+    }
+    /***
+     *  时间转换为字符串
+     * @param date
+     * @return yyyyMM
+     */
+    public static String getDateToYearMonthString(Date date){
+        //Date date = new Date();
+
+        timeStr1 = simpleDateFormatDayMonth.format(date);
+
+        return timeStr1;
+    }
+    /***
+     *  时间转换为字符串
+     * @param date
+     * @return yyyyMMdd
+     */
+    public static String getDateToYearMonthDayString(Date date){
+        //Date date = new Date();
+
+        timeStr1 = simpleDateFormatDate.format(date);
 
         return timeStr1;
     }
