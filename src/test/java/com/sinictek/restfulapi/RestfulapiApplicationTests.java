@@ -40,17 +40,17 @@ class RestfulapiApplicationTests {
     ALineService aLineService;
 
 
-    @Test
+    /*@Test
     void testGetPad(){
 
         //579337100176916481
         List<SPad> sPad = sPadService.selectList(Condition.create().eq("padIndex",0));
         int i = 9;
-    }
-    @Test
+    }*/
+   /* @Test
     void testInsertBoard(){
 
-        /*for (int i = 0; i < 2; i++) {
+        *//*for (int i = 0; i < 2; i++) {
             SPcb sPcb = new SPcb();
             sPcb.setPcbIdLine("1#SMT31");
             sPcb.setLineNo("SMT31");
@@ -101,8 +101,8 @@ class RestfulapiApplicationTests {
             sPcb.setMissingCount(0);
             sPcbService.insert(sPcb);
         }
-*/
-        List<SPad> padList = new ArrayList<SPad>();
+*//*
+       *//* List<SPad> padList = new ArrayList<SPad>();
         //pad
         log.warn("for start....");
        for (int i = 0; i < 9999; i++) {
@@ -144,10 +144,10 @@ class RestfulapiApplicationTests {
         log.error("Batch start....");
         sPadService.insertBatch(padList);
         log.error("Batch end....");
+*//*
+    }*/
 
-    }
-
-    @Test
+    /*@Test
     void getSPILine(){
 
         String str = JSON.toJSONString(sLineService.selectById(459));
@@ -167,29 +167,29 @@ class RestfulapiApplicationTests {
 
 
 
-       /* SLine sLine = new SLine();
+       *//* SLine sLine = new SLine();
         sLine.setLineNo("SMT001");
         sLine.setLineContent("其实是假的");
-        sLineService.insert(sLine);*/
+        sLineService.insert(sLine);*//*
 
-      /*  long id = sLine.getId();
-        String str = JSON.toJSONString(sLine);*/
+      *//*  long id = sLine.getId();
+        String str = JSON.toJSONString(sLine);*//*
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     void getSPIPcb(){
 
         SPcb sPcb = sPcbService.selectById(422);
         String str = JSON.toJSONString(sPcb);
-    }
-    @Test
+    }*/
+   /* @Test
     void getSPIPad(){
         SPad sPad = sPadService.selectById(1);
         //String strBase64 = net.iharder.Base64.encodeBytes(sPad.getPad2dImage()) ;
         String str = JSON.toJSONString(sPad);
-    }
-    String t ;
+    }*/
+    /*String t ;
     @Test
     void testPadTabName(){
 
@@ -215,8 +215,8 @@ class RestfulapiApplicationTests {
         assert map.size() == 2;
         assert map.get(4).equals("result 1");
         assert map.get(5).equals("result 2");
-       /* SPcb sPcb= sPcbService.selectById(422);
-        Object obj = JSON.isValid(sPcb.getRemark()) ;*/
+       *//* SPcb sPcb= sPcbService.selectById(422);
+        Object obj = JSON.isValid(sPcb.getRemark()) ;*//*
 
-    }
+    }*/
 }
