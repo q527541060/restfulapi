@@ -32,20 +32,8 @@ public class RestfulapiApplication {
                     "/sql/db_spm08.sql",
                     "/sql/db_spm09.sql",
                     "/sql/db_spm10.sql",
-
                     "/sql/db_spm11.sql",
                     "/sql/db_spm12.sql",
-                  /*  "/sql/db_spm13.sql",
-                    "/sql/db_spm202204.sql",
-                    "/sql/db_spm202205.sql",
-                    "/sql/db_spm202206.sql",
-                    "/sql/db_spm202207.sql",
-                    "/sql/db_spm202208.sql",
-                    "/sql/db_spm202209.sql",
-                    "/sql/db_spm202210.sql",
-                    "/sql/db_spm202211.sql",
-                    "/sql/db_spm202212.sql",*/
-
 
                     "/sql/db_spm210001.sql"
             );
